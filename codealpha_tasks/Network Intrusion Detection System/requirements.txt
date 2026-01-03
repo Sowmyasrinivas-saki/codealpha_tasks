@@ -1,0 +1,5 @@
+Snort (Windows build)
+Npcap (WinPcap compatible mode)
+Windows 10 or later
+Administrator privileges
+Text editor (Notepad++ recommended)

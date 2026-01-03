@@ -1,0 +1,56 @@
+Application Overview
+The reviewed application is a Python-based user authentication system that uses a SQLite database.
+The purpose of this review is to identify security vulnerabilities caused by insecure coding practices and to recommend secure alternatives.
+
+Review Methodology
+The review was conducted using manual source code inspection.
+Common insecure coding patterns were identified and mapped to known security risks.
+
+Identified Security Vulnerabilities
+
+1. SQL Injection
+
+Description: User input is directly concatenated into SQL queries.
+Impact: An attacker can manipulate database queries to bypass authentication or extract sensitive data.
+Severity: High
+
+
+2. Plaintext Password Handling
+
+Description: Passwords are stored and processed in plaintext.
+Impact: If the database or source code is compromised, user credentials are fully exposed.
+Severity: High
+
+
+3. Lack of Input Validation
+
+Description: User input is not validated or sanitized before being processed.
+Impact: Increases the risk of injection attacks and logic manipulation.
+Severity: Medium
+
+
+4. Weak Database Design
+
+Description: The database schema does not enforce constraints such as unique usernames.
+Impact: Can result in duplicate accounts and inconsistent authentication behavior.
+Severity: Low
+
+
+Security Recommendations
+
+Use parameterized SQL queries to prevent injection attacks.
+Hash passwords using secure cryptographic algorithms.
+Avoid storing or comparing plaintext credentials.
+Apply proper database constraints and secure authentication controls.
+
+
+Remediation Summary
+
+A secure version of the application was implemented using:
+Parameterized queries
+Password hashing
+Improved database design
+These changes mitigate the identified vulnerabilities.
+
+Conclusion
+This secure coding review demonstrates how common vulnerabilities arise from insecure coding practices and how they can be mitigated by following secure development principles.
